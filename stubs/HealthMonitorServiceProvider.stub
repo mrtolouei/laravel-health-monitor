@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Gate;
+use HealthMonitor\HealthMonitorServiceProvider as ServiceProvider;
+
+class HealthMonitorServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        parent::boot();
+    }
+
+    /**
+     * Register the Health Monitor gate.
+     *
+     * This gate determines who can access Health Monitor in non-local environments.
+     */
+    protected function gate(): void
+    {
+        Gate::define('viewHealthMonitor', function ($user = null) {
+            if (app()->environment('local')) {
+                return true;
+            }
+            return in_array(optional($user)->email, config('health-monitor.allowed_emails', []));
+        });
+    }
+}
