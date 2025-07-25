@@ -3,6 +3,10 @@ A lightweight, extendable Laravel package for monitoring the health of internal 
 
 Built for developers who care about observability and application resilience.
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Tests](https://github.com/mrtolouei/laravel-health-monitor/actions/workflows/tests.yml/badge.svg)](https://github.com/mrtolouei/laravel-health-monitor/actions/workflows/tests.yml)
+[![Latest Stable Version](https://poser.pugx.org/mrtolouei/laravel-health-monitor/v/stable)](https://packagist.org/packages/mrtolouei/laravel-health-monitor)
+
 ## Installation
 Install the package via Composer:
 ```
